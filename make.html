@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<title>new DUANG()</title>
+	<meta name="author" content="James Liu">
+	<meta name="description" content="DDUUAANNGG">
+	<meta name="keywords" content="duang,jackiechan,bawang,shampoo,fx">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="duang.css">
+</head>
+<body>
+	<form id="zb" class="container">
+		<img id="duang" src="duang.png" title="DUANG" alt="DUANG">
+		<div id="name">DUANG</div>
+		<div id="desc"><input type="text" id="login"> @ <a href="http://github.com/jamesliu96" target="_blank" id="gh">GitHub</a></div>
+		<button id="gen">GENERATE</button>
+		<div id="copying">Copyright © <span id="year">2015</span> <a href="http://jamesliu.info/" target="_blank">James Liu</a></div>
+	</form>
+	<script type="text/javascript">
+	function $(id) { return document.getElementById(id); }
+	function redirect() {
+		location.href = "/#" + $('login').value;
+		return false;
+	}
+	$('gen').onclick = $('zb').onsubmit = redirect;
+	$('year').innerHTML = new Date().getFullYear();
+	</script>
+</body>
+</html>
