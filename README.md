@@ -3,9 +3,8 @@ DUANG
 
 Your personal GitHub namecard.
 
-[Pull Requests](https://github.com/jamesliu96/duang/pulls) are welcomed.
-
-[James Liu @ DUANG](http://duang.jamesliu.info/#jamesliu96)
+[Linus Torvalds @ DUANG](http://duang.jamesliu.info/#torvalds)
+![Linus Torvalds @ DUANG](http://i1.tietuku.com/9a98d4ea795bf0cf.png)
 
 License
 ------
