@@ -64,7 +64,8 @@ a:hover, a:visited {
 }
 #gen {
 	margin-top: 10px;
-	font-size: 10px;font-family: Menlo, Courier, monospace;
+	font-size: 10px;
+	font-family: Menlo, Courier, monospace;
 }
 #copying {
 	margin-top: 40px;
