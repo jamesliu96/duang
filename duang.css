@@ -71,6 +71,9 @@ a:hover, a:visited {
 	margin-top: 40px;
 	font-size: 14px;
 }
+#copying > span {
+	color: #f00;
+}
 @-webkit-keyframes duang {
 	10% {
 		-webkit-transform: translateX(4px) rotate(2deg);
