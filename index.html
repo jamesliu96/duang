@@ -18,38 +18,38 @@
 		<div id="name">DUANG</div>
 		<div id="desc"><a href="mailto:j@jamesliu.info" target="_blank" id="login">jamesliu96</a> @ <a href="http://github.com/jamesliu96" target="_blank" id="gh">GitHub</a></div>
 		<div>+<span id="fo" title="Followers">0</span> -<span id="fw" title="Following">0</span> @<span id="rp" title="Public Repos">0</span> *<span id="gs" title="Public Gists">0</span></div>
-		<div><a href="make.html" id="make" title="create ur own DUANG">new DUANG()</a></div>
+		<div><a href="make" id="make" title="create ur own DUANG">new DUANG()</a></div>
 	</div>
-	<script type="text/javascript">
-	var username = location.hash.substr(1);
-	function $(id) { return document.getElementById(id); }
-	function duang(r) {
-		if (r.meta.status != 404) {
-			d = r.data;
-			$('duang').src = d.avatar_url;
-			$('name').innerHTML = d.name || "ANONYMOUS";
-			document.title = (d.name || "ANONYMOUS") + " @ DUANG";
-			$('login').href = d.email ? "mailto:" + d.email : "javascript:void(0)";
-			$('login').innerHTML = d.login;
-			$('gh').href = d.html_url;
-			$('fo').innerHTML = d.followers;
-			$('fw').innerHTML = d.following;
-			$('rp').innerHTML = d.public_repos;
-			$('gs').innerHTML = d.public_gists;
-			$('zb').style.display = "block";
-		} else {
-			alert("username not found");
-			location.href = "/";
-		}
+<script type="text/javascript">
+var username = location.hash.substr(1);
+function $(id) { return document.getElementById(id); }
+function duang(r) {
+	if (r.meta.status != 404) {
+		d = r.data;
+		$('duang').src = d.avatar_url;
+		$('name').innerHTML = d.name || "ANONYMOUS";
+		document.title = (d.name || "ANONYMOUS") + " @ DUANG";
+		$('login').href = d.email ? "mailto:" + d.email : "javascript:void(0)";
+		$('login').innerHTML = d.login;
+		$('gh').href = d.html_url;
+		$('fo').innerHTML = d.followers;
+		$('fw').innerHTML = d.following;
+		$('rp').innerHTML = d.public_repos;
+		$('gs').innerHTML = d.public_gists;
+		$('zb').style.display = "block";
+	} else {
+		alert("username not found");
+		location.href = "/";
 	}
-	(function() {
-		var b = document.getElementsByTagName('body')[0];
-		var s = document.createElement('script');
-		s.type = "text/javascript";
-		s.src  ="https://api.github.com/users/" + (username || "jamesliu96") + "?callback=duang";
-		b.appendChild(s);
-	})();
-	$('year').innerHTML = new Date().getFullYear();
-	</script>
+}
+(function() {
+	var b = document.getElementsByTagName('body')[0];
+	var s = document.createElement('script');
+	s.type = "text/javascript";
+	s.src  ="https://api.github.com/users/" + (username || "jamesliu96") + "?callback=duang";
+	b.appendChild(s);
+})();
+$('year').innerHTML = new Date().getFullYear();
+</script>
 </body>
 </html>
