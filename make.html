@@ -20,13 +20,15 @@
 		<button id="gen">GENERATE</button>
 		<div id="copying">Made with <span>❤</span> by <a href="https://jamesliu.info/" target="_blank">James Liu</a></div>
 	</form>
-	<script type="text/javascript">
-	function $(id) { return document.getElementById(id); }
-	function redirect() {
-		location.href = "/#" + $('login').value;
-		return false;
-	}
-	$('gen').onclick = $('zb').onsubmit = redirect;
-	</script>
+<script type="text/javascript">
+function $(id) { return document.getElementById(id); }
+function redirect() {
+	location.href = "/#" + $('login').value;
+	return false;
+}
+$('gen').onclick = $('zb').onsubmit = redirect;
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-48482814-5"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date);gtag("config","UA-48482814-5");</script>
 </body>
 </html>
