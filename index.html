@@ -18,7 +18,6 @@
 		<div id="com"></div>
 		<div><a href="javascript:void(0)" target="_blank" id="blog"></a></div>
 		<div id="loc"></div>
-		<div id="bio"></div>
 		<div><a href="/new" id="make" title="make new">new DUANG()</a></div>
 	</div>
 <script type="text/javascript">
@@ -41,7 +40,6 @@ function duang(r) {
 		$('blog').href = d.blog || "javascript:void(0)";
 		$('blog').innerText = d.blog && (new URL(d.blog)).hostname;
 		$('loc').innerText = d.location;
-		$('bio').innerText = d.bio;
 		$('zb').style.display = "block";
 	} else {
 		alert("error: username not found");
