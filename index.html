@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<html lang="en">
 <head>
-	<meta http-equiv="content-type" content="text/html;charset=utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="renderer" content="webkit">
+	<meta charset="utf-8">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0">
 	<title>DUANG</title>
-	<meta name="author" content="James Liu">
-	<meta name="description" content="DDUUAANNGG">
-	<meta name="keywords" content="duang,jackiechan,bawang,shampoo,fx">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="icon" type="image/png" href="/favicon.png">
 	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="duang.css">
 </head>
@@ -16,29 +13,38 @@
 	<div id="zb" class="container" style="display: none;">
 		<img id="duang" src="duang.png" title="DUANG" alt="DUANG">
 		<div id="name">DUANG</div>
-		<div id="desc"><a href="mailto:j@jamesliu.info" target="_blank" id="login">jamesliu96</a> @ <a href="http://github.com/jamesliu96" target="_blank" id="gh">GitHub</a></div>
-		<div>+<span id="fo" title="Followers">0</span> -<span id="fw" title="Following">0</span> @<span id="rp" title="Public Repos">0</span> *<span id="gs" title="Public Gists">0</span></div>
-		<div><a href="/new" id="make" title="create your own">new DUANG()</a></div>
+		<div><a href="javascript:void(0)" target="_blank" id="login">duang</a> @ <a href="javascript:void(0)" target="_blank" id="gh">GitHub</a></div>
+		<div>+<span id="fo" title="followers">0</span> -<span id="fw" title="following">0</span> @<span id="rp" title="public repos">0</span> *<span id="gs" title="public gists">0</span></div>
+		<div id="com"></div>
+		<div><a href="javascript:void(0)" target="_blank" id="blog"></a></div>
+		<div id="loc"></div>
+		<div id="bio"></div>
+		<div><a href="/new" id="make" title="make new">new DUANG()</a></div>
 	</div>
 <script type="text/javascript">
 var username = location.hash.substr(1);
 function $(id) { return document.getElementById(id); }
 function duang(r) {
-	if (r.meta.status != 404) {
+	if (r.meta.status == 200) {
 		d = r.data;
 		$('duang').src = d.avatar_url;
-		$('name').innerHTML = d.name || "ANONYMOUS";
-		document.title = (d.name || "ANONYMOUS") + " @ DUANG";
+		$('name').innerText = (d.name || "ANONYMOUS").toUpperCase();
+		document.title = (d.name || "ANONYMOUS").toUpperCase() + " @ DUANG";
 		$('login').href = d.email ? "mailto:" + d.email : "javascript:void(0)";
-		$('login').innerHTML = d.login;
+		$('login').innerText = d.login;
 		$('gh').href = d.html_url;
-		$('fo').innerHTML = d.followers;
-		$('fw').innerHTML = d.following;
-		$('rp').innerHTML = d.public_repos;
-		$('gs').innerHTML = d.public_gists;
+		$('fo').innerText = d.followers;
+		$('fw').innerText = d.following;
+		$('rp').innerText = d.public_repos;
+		$('gs').innerText = d.public_gists;
+		$('com').innerText = d.company;
+		$('blog').href = d.blog || "javascript:void(0)";
+		$('blog').innerText = d.blog;
+		$('loc').innerText = d.location;
+		$('bio').innerText = d.bio;
 		$('zb').style.display = "block";
 	} else {
-		alert("username not found");
+		alert("error: username not found");
 		location.href = "/";
 	}
 }
@@ -46,7 +52,7 @@ function duang(r) {
 	var b = document.getElementsByTagName('body')[0];
 	var s = document.createElement('script');
 	s.type = "text/javascript";
-	s.src  ="https://api.github.com/users/" + (username || "jamesliu96") + "?callback=duang";
+	s.src  = "https://api.github.com/users/" + (username || "jamesliu96") + "?callback=duang";
 	b.appendChild(s);
 })();
 </script>
