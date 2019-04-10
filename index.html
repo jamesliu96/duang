@@ -39,7 +39,7 @@ function duang(r) {
 		$('gs').innerText = d.public_gists;
 		$('com').innerText = d.company;
 		$('blog').href = d.blog || "javascript:void(0)";
-		$('blog').innerText = d.blog;
+		$('blog').innerText = d.blog && (new URL(d.blog)).hostname;
 		$('loc').innerText = d.location;
 		$('bio').innerText = d.bio;
 		$('zb').style.display = "block";
