@@ -3,10 +3,9 @@ DUANG
 
 Your personal GitHub namecard.
 
-[Linus Torvalds @ DUANG](https://duang.jamesliu.info/#torvalds)
-[![Linus Torvalds @ DUANG](https://raw.githubusercontent.com/jamesliu96/duang/gh-pages/screenshot.png)](https://duang.jamesliu.info/#torvalds)
+[![LINUS TORVALDS @ DUANG](https://raw.githubusercontent.com/jamesliu96/duang/gh-pages/screenshot.png)](https://duang.jamesliu.info/#torvalds)
 
-[Click here](https://duang.jamesliu.info/new) to create your own DUANG namecard.
+[Click me](https://duang.jamesliu.info/new) to create your own DUANG namecard.
 
 License
 ------
