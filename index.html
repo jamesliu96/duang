@@ -22,7 +22,7 @@
 	</div>
 <script type="text/javascript">
 var username = location.hash.substr(1);
-var $ = document.getElementById;
+function $(id) { return document.getElementById(id); }
 function duang(r) {
 	if (r.meta.status == 200) {
 		d = r.data;
