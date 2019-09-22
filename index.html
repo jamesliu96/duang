@@ -22,7 +22,7 @@
 	</div>
 <script type="text/javascript">
 var username = location.hash.substr(1);
-function $(id) { return document.getElementById(id); }
+var $ = document.getElementById;
 function duang(r) {
 	if (r.meta.status == 200) {
 		d = r.data;
@@ -47,7 +47,7 @@ function duang(r) {
 	}
 }
 (function() {
-	var b = document.getElementsByTagName('body')[0];
+	var b = document.body;
 	var s = document.createElement('script');
 	s.type = "text/javascript";
 	s.src  = "https://api.github.com/users/" + (username || "jamesliu96") + "?callback=duang";
