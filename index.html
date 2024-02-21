@@ -23,6 +23,12 @@
 <script type="text/javascript">
 var username = location.hash.substr(1);
 function $(id) { return document.getElementById(id); }
+function getHostname(s) {
+	try {
+		return (new URL(s)).hostname;
+	} catch (e) {}
+	return s;
+}
 function duang(r) {
 	if (r.meta.status == 200) {
 		d = r.data;
@@ -38,7 +44,7 @@ function duang(r) {
 		$('gs').innerText = d.public_gists;
 		$('com').innerText = d.company;
 		$('blog').href = d.blog || "javascript:void(0)";
-		$('blog').innerText = d.blog && (new URL(d.blog)).hostname;
+		$('blog').innerText = d.blog && getHostname(d.blog);
 		$('loc').innerText = d.location;
 		$('zb').style.display = "block";
 	} else {
